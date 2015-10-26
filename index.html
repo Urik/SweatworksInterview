@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="angular.js"></script>
-    <script type="text/javascript" src="controller.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="controller.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body ng-app="test" ng-controller="testController">
-    <div class="content">
-        <header class="controls-holder container">
-            <div class="numbers-holder">
-                <input type="number" placeholder="Min number" ng-model="start">
-                <input type="number" placeholder="Max number" ng-model="stop">
-            </div>
-            <div class="buttons-holder">
-                <button ng-click="skip = undefined">Show all numbers</button>
-                <button ng-click="skip = true">Show even numbers</button>
-                <button ng-click="skip = false">Show odd numbers</button>
-            </div>
-        </header>
-        <div class="results-space container">
-            <div class="buttons-holder">
-                <button ng-click="direction = 'left'">Display on the left</button>
-                <button ng-click="direction = 'right'">Display on the right</button>
-            </div>
-        </div>
+	<div class="content">
+		<header class="controls-holder container">
+			<div class="numbers-holder">
+				<input type="number" placeholder="Min number" ng-model="start">
+				<input type="number" placeholder="Max number" ng-model="stop">
+			</div>
+			<div class="buttons-holder">
+				<button ng-click="skip = undefined">Show all numbers</button>
+				<button ng-click="skip = true">Show even numbers</button>
+				<button ng-click="skip = false">Show odd numbers</button>
+			</div>
+		</header>
+		<div class="results-space container">
+			<div class="buttons-holder">
+				<button ng-click="direction = 'left'">Display on the left</button>
+				<button ng-click="direction = 'right'">Display on the right</button>
+			</div>
+		</div>
 
-        <div class="list">
-            <ul ng-style="{float: direction}">
-                <li ng-show="start && stop" ng-repeat="i in [] | range:start:stop:1 | skip:skip" >{{i}}</li>
-            </ul>
-        </div>
-    </div>
+		<div class="list">
+			<ul ng-style="{float: direction}">
+				<li ng-show="start && stop" ng-repeat="i in [] | range:start:stop:1 | skip:skip" >{{i}}</li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
