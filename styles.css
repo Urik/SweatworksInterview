@@ -24,6 +24,10 @@ html, body {
 	display: inline-block;
 }
 
-.buttons-holder {
+.buttons-holder, .float-right {
 	float: right;
+}
+
+.float-left {
+	float: left;
 }

@@ -1,0 +1,5 @@
+<div ng-repeat="item in items">
+    <div ng-hide="(showEvens && item %2 !== 0) || (showOdds && item %2 !== 1)">
+        {{item}}
+    </div>
+</div>
