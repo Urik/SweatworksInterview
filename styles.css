@@ -1,29 +1,67 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .content {
-	height: 100%;
-	background-color: red;
-	max-width: 920px;
-	margin-left: auto;
-	margin-right: auto;
+    min-width: 170px;
+    height: 100%;
+    background-color: red;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
 }
 
-.container {
-	padding: 20px;
+.controls {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: orange;
 }
 
-.controls-holder {
-	background-color: orange;
+.boundaries, .parity-buttons,
+.position-buttons, .number-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.numbers-holder {
-	display: inline-block;
+.position-buttons {
+    padding: 20px;
 }
 
-.buttons-holder {
-	float: right;
+.number-list {
+    width: 50%;
+    min-width: 4rem;
+    border: solid 1px;
+}
+
+.number-list.right {
+    float: right;
+}
+
+.number-list.left {
+    float: left;
+}
+
+.number {
+    flex: 0 0 auto;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 0.5rem;
+    background-color: orange;
+    text-align: center;
+    border: solid 1px;
 }
