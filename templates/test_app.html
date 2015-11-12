@@ -1,0 +1,29 @@
+<div class="content">
+  <header class="controls-holder header">
+    <div class="numbers-holder">
+      <label for="inputMin">
+        Min Number
+        <input id="inputMin" class="input-number" type="number" ng-model="appCtrl.limit.min" placeholder="Min number">
+      </label>
+      <label for="inputMax">
+        Max Number
+        <input id="inputMax" class="input-number" type="number" ng-model="appCtrl.limit.max" placeholder="Max number">
+      </label>
+    </div>
+    <div class="buttons-holder">
+      <button ng-click="appCtrl.changeParity(null)">Show all numbers</button>
+      <button ng-click="appCtrl.changeParity(true)">Show even numbers</button>
+      <button ng-click="appCtrl.changeParity(false)">Show odd numbers</button>
+    </div>
+  </header>
+  <div class="results-space container">
+    <div class="buttons-holder">
+      <button ng-click="appCtrl.changeAlignment(appCtrl.Alignments.LEFT)">Display on the left</button>
+      <button ng-click="appCtrl.changeAlignment(appCtrl.Alignments.RIGHT)">Display on the right</button>
+    </div>
+  </div>
+
+  <test-panel class="panel" alignment="appCtrl.alignment">
+    <test-list min="appCtrl.limit.min" max="appCtrl.limit.max" parity="appCtrl.parity"></test-list>
+  </test-panel>
+</div>
