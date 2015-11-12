@@ -79,7 +79,6 @@ angular.module('test', [])
         max     : '=',
         parity  : '='
       },
-      transclude  : true,
       replace     : true,
       templateUrl : 'templates/test_list.html',
       link : {
