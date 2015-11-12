@@ -83,8 +83,6 @@ angular.module('test', [])
             if (min && max) {
               if (scope.min < scope.max) {
 
-                console.log(scope.min);
-
                 var numbers = [];
 
                 for (var i = scope.min; i <= scope.max; i++) {
@@ -102,6 +100,11 @@ angular.module('test', [])
   .filter('parityFilter', function () {
     return function (items, parity) {
       var filtered = [];
+
+      if(Object.prototype.toString.call(items) !== '[object Array]') {
+        console.error('parityFiler Error:', 'Array expected, got', typeof items);
+        return;
+      }
 
       filtered = items.filter(function (item) {
         var even = (item % 2 === 0);
