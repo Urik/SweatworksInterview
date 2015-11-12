@@ -9,23 +9,41 @@
 	<div class="content">
 		<header class="controls-holder container">
 			<div class="numbers-holder">
-				<input type="number" placeholder="Min number">
-				<input type="number" placeholder="Max number">
+				<input type="number" value="1" ng-model="min_number" placeholder="Min number" ng-change="showAllNumbers()">
+				<input type="number" ng-model="max_number" placeholder="Max number" ng-change="showAllNumbers()">
 			</div>
 			<div class="buttons-holder">
-				<button>Show all numbers</button>
-				<button>Show even numbers</button>
-				<button>Show odd numbers</button>
+				<button ng-click="showAllNumbers()">Show all numbers</button>
+				<button ng-click="showEvenNumbers()">Show even numbers</button>
+				<button ng-click="showOddNumbers()">Show odd numbers</button>
 			</div>
 		</header>
 		<div class="results-space container">
 			<div class="buttons-holder">
-				<button>Display on the left</button>
-				<button>Display on the right</button>
+				<button ng-click="myStyle={float:'left'}">Display on the left</button>
+				<button ng-click="myStyle={float:'right'}">Display on the right</button>
 			</div>
 		</div>
 
-		<div class="list">
+		<div class="list" >
+			<div id="full_list" ng-show="show_full" >
+				<h1>THE FULL LIST IS:</h1>
+				<div class="wrap" ng-style="myStyle">
+					<span ng-repeat="string in list_array" >{{string}}<br/></span>
+				</div>
+			</div>
+			<div id="evenlist" ng-show="show_even">
+				<h1>THE EVEN LIST IS:</h1>	
+				<div class="wrap" ng-style="myStyle">
+					<span id="evenlist" ng-repeat="string in list_array" ng-if='$odd'>{{string}}<br/></span>
+				</div>
+			</div>
+			<div id="oddlist" ng-show="show_odd">
+				<h1>THE ODD LIST IS:</h1>	
+				<div class="wrap" ng-style="myStyle">
+					<span id="oddlist" ng-repeat="string in list_array" ng-if='$even'>{{string}}<br/></span>
+				</div>
+			</div>
 			<!-- INSERT THE NUMBERS HERE. YOU ARE ALLOWED THE MODIFY OTHER PARTS OF THE CODE -->
 		</div>
 	</div>
