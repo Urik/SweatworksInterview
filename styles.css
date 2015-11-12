@@ -1,29 +1,59 @@
 html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .content {
-	height: 100%;
-	background-color: red;
-	max-width: 920px;
-	margin-left: auto;
-	margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: red;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 .container {
-	padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
 }
 
 .controls-holder {
-	background-color: orange;
+  background-color: orange;
 }
 
 .numbers-holder {
-	display: inline-block;
+  display: flex;
+  display: inline-block;
+}
+
+.numbers-holder .input-number {
+  width : 64px;
 }
 
 .buttons-holder {
-	float: right;
+  display: flex;
+  float: right;
+}
+
+.panel {
+  display:  flex;
+  flex-direction: row;
+  background-color: grey;
+}
+
+.align-left {
+  justify-content: flex-start;
+}
+
+.align-right {
+  justify-content: flex-end;
 }
