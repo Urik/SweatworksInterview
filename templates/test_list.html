@@ -1,0 +1,7 @@
+<div class="list">
+  <ul>
+    <li ng-repeat="number in getNumbers() | parityFilter : parity track by $index">
+      {{number}}
+    </li>
+  </ul>
+</div>
