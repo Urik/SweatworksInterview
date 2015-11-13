@@ -27,3 +27,20 @@ html, body {
 .buttons-holder {
 	float: right;
 }
+
+.list {
+	padding: 20px;
+	color: white;
+}
+
+.on-left-side {
+	float: left;
+}
+
+.on-right-side {
+	float: right;
+}
+
+.error {
+	color:red;
+}

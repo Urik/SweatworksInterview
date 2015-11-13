@@ -1,0 +1,7 @@
+<div ng-class="displayOnClass">
+	<div>
+		<div ng-repeat="number in numbers" ng-hide="(numberTypes.oddNumbers && number%2 === 0) || (numberTypes.evenNumbers && number%2 !== 0)">
+			{{number}}
+		</div>
+	</div>
+</div>
