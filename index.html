@@ -5,27 +5,34 @@
 	<script type="text/javascript" src="controller.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body ng-app="test" ng-controller="testController">
+<body ng-app="test" ng-controller="testController as testCtrl">
 	<div class="content">
 		<header class="controls-holder container">
 			<div class="numbers-holder">
-				<input type="number" placeholder="Min number">
-				<input type="number" placeholder="Max number">
+				<input type="number" placeholder="Min number" ng-model="testCtrl.min">
+				<input type="number" placeholder="Max number" ng-model="testCtrl.max">
 			</div>
 			<div class="buttons-holder">
-				<button>Show all numbers</button>
-				<button>Show even numbers</button>
-				<button>Show odd numbers</button>
+				<button ng-click="testCtrl.parity = 'both'">Show all numbers</button>
+				<button ng-click="testCtrl.parity = 'even'">Show even numbers</button>
+				<button ng-click="testCtrl.parity = 'odd'">Show odd numbers</button>
+			</div>
+			<br><br>
+			<div>
+			Parity: <strong>{{testCtrl.parity}}</strong><br>
+			Position: <strong>{{testCtrl.position}}</strong>
 			</div>
 		</header>
 		<div class="results-space container">
 			<div class="buttons-holder">
-				<button>Display on the left</button>
-				<button>Display on the right</button>
+				<button ng-click="testCtrl.position = 'left'">Display on the left</button>
+				<button ng-click="testCtrl.position = 'right'">Display on the right</button>
 			</div>
 		</div>
 
+
 		<div class="list">
+			<sw-number-list min="{{testCtrl.min}}" max="{{testCtrl.max}}" parity="{{testCtrl.parity}}" position="{{testCtrl.position}}"></sw-number-list>
 			<!-- INSERT THE NUMBERS HERE. YOU ARE ALLOWED THE MODIFY OTHER PARTS OF THE CODE -->
 		</div>
 	</div>
