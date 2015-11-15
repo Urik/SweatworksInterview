@@ -13,7 +13,8 @@
                 scope: {
                     min: '@',
                     max: '@',
-                    parity: '@'
+                    parity: '@',
+                    position: '@'
                 },
                 link: function(scope, element, attrs) {
                     var $numBox = element.children('div'),
