@@ -5,7 +5,8 @@ angular.module('test.directives', [])
                 scope: {
                         from: '&',
                         to: '&',
-                        filter: '&'
+                        filter: '&',
+                        position: '&'
                 },
                 controller: ['$scope', '$filter', function($scope, $filter) {
                         $scope.numbers = function(from, to, filterName) {
@@ -18,6 +19,8 @@ angular.module('test.directives', [])
                                 return numbers;
                         };
                 }],
-                template: '<div ng-repeat="number in numbers(from(), to(), filter())">{{number}}</div>'
+                template: ' <div class="{{\'pull-\'+(position()||\'left\')}}">                                  \
+                                <div ng-repeat="number in numbers(from(), to(), filter())">{{number}}</div>     \
+                            </div>'
         };
 });

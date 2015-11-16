@@ -45,4 +45,12 @@ describe('numbers directive test', function() {
         expect(element.html()).not.toContain("4");
         expect(element.html()).toContain("5");
     });
+    
+    it('should add positioning classes', function() {
+        var element = $compile("<numbers from=\"3\" to=\"5\" position=\"'right'\"></numbers>")($rootScope);
+        
+        $rootScope.$digest();
+        
+        expect(element.find('div').eq(0).hasClass('pull-right')).toBe(true);
+    });
 });

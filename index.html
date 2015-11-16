@@ -22,15 +22,16 @@
 		</header>
 		<div class="results-space container">
 			<div class="buttons-holder">
-				<button>Display on the left</button>
-				<button>Display on the right</button>
+				<button ng-click="position = 'left'">Display on the left</button>
+				<button ng-click="position = 'right'">Display on the right</button>
 			</div>
 		</div>
 
 		<div class="list">
 			<numbers from="min"
                                  to="max"
-                                 filter="filter"></numbers>
+                                 filter="filter"
+                                 position="position"></numbers>
 		</div>
 	</div>
 </body>
