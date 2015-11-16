@@ -4,17 +4,20 @@ angular.module('test.directives', [])
                 restrict: 'E',
                 scope: {
                         from: '&',
-                        to: '&'
+                        to: '&',
+                        filter: '&'
                 },
-                controller: ['$scope', function($scope) {
-                        $scope.numbers = function(from, to) {
+                controller: ['$scope', '$filter', function($scope, $filter) {
+                        $scope.numbers = function(from, to, filterName) {
                                 var numbers = [];
                                 for (var i = from; i <= to; i++) {
-                                        numbers.push(i);
+                                        if (!filterName || $filter(filterName)(i)) {
+                                                numbers.push(i);
+                                        }
                                 }
                                 return numbers;
                         };
                 }],
-                template: '<div ng-repeat="number in numbers(from(), to())">{{number}}</div>'
+                template: '<div ng-repeat="number in numbers(from(), to(), filter())">{{number}}</div>'
         };
 });

@@ -4,6 +4,7 @@
 	<script type="text/javascript" src="angular.js"></script>
 	<script type="text/javascript" src="controller.js"></script>
         <script type="text/javascript" src="directive.js"></script>
+        <script type="text/javascript" src="filters.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body ng-app="test" ng-controller="testController">
@@ -14,9 +15,9 @@
 				<input type="number" placeholder="Max number" ng-model="max" />
 			</div>
 			<div class="buttons-holder">
-				<button>Show all numbers</button>
-				<button>Show even numbers</button>
-				<button>Show odd numbers</button>
+				<button ng-click="filter = null">Show all numbers</button>
+				<button ng-click="filter = 'even'">Show even numbers</button>
+				<button ng-click="filter = 'odd'">Show odd numbers</button>
 			</div>
 		</header>
 		<div class="results-space container">
@@ -27,7 +28,9 @@
 		</div>
 
 		<div class="list">
-			<numbers from="min" to="max"></numbers>
+			<numbers from="min"
+                                 to="max"
+                                 filter="filter"></numbers>
 		</div>
 	</div>
 </body>
