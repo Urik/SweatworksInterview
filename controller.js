@@ -8,12 +8,22 @@ angular.module('test')
     $scope.maxNumber = 10;
     $scope.currentFilter = $scope.isAny;
 
+    $scope.alignLeft = function() {
+      $scope.listAlign = 'left';
+    }
+
+    $scope.alignRight = function() {
+      $scope.listAlign = 'right';
+    }
+
     $scope.isEven = function (i) {
       return (i % 2 === 0);
     }
+
     $scope.isOdd = function (i) {
       return (i % 2 === 1);
     }
+
     $scope.buildList = function (filter) {
       var i = $scope.minNumber;
       var j = $scope.maxNumber;

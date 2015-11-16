@@ -18,13 +18,13 @@
 		</header>
 		<div class="results-space container">
 			<div class="buttons-holder">
-				<button>Display on the left</button>
-				<button>Display on the right</button>
+				<button ng-click="alignLeft()">Display on the left</button>
+				<button ng-click="alignRight()">Display on the right</button>
 			</div>
 		</div>
 
 		<div class="list">
-			<list items="filteredItems" />
+			<list items="filteredItems" align="listAlign" />
 		</div>
 	</div>
 

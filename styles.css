@@ -27,3 +27,7 @@ html, body {
 .buttons-holder {
 	float: right;
 }
+
+.list-right {
+	text-align: right;
+}
