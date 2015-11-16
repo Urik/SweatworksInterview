@@ -1,14 +1,11 @@
-angular.module('test', [])
+angular.module('test')
   .directive('list', function() {
     return {
-      require: 'ngModel',
       restrict: 'E',
-      templateUrl: '/partials/list.html',
       scope: {
-        filter: '@'
+        items: '=',
+        currentFilter: '='
       },
-      link: function($scope, iElm, iAttrs, controller) {
-        
-      }
+      template: '<ul><li ng-repeat="item in items">{{item}}</li></ul>',
     };
   });

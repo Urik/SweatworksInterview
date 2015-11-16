@@ -7,13 +7,13 @@
 	<div class="content">
 		<header class="controls-holder container">
 			<div class="numbers-holder">
-				<input type="number" placeholder="Min number" ng-model="">
-				<input type="number" placeholder="Max number" ng-model="">
+				<input type="number" placeholder="Min number" ng-model="minNumber" ng-change="buildList()">
+				<input type="number" placeholder="Max number" ng-model="maxNumber" ng-change="buildList()">
 			</div>
 			<div class="buttons-holder">
-				<button>Show all numbers</button>
-				<button>Show even numbers</button>
-				<button>Show odd numbers</button>
+				<button ng-click="buildList(isAny)">Show all numbers</button>
+				<button ng-click="buildList(isEven)">Show even numbers</button>
+				<button ng-click="buildList(isOdd)">Show odd numbers</button>
 			</div>
 		</header>
 		<div class="results-space container">
@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="list">
-			<list ng-model="filteredItems" />
+			<list items="filteredItems" />
 		</div>
 	</div>
 
