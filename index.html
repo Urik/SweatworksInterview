@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script type="text/javascript" src="angular.js"></script>
-	<script type="text/javascript" src="controller.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body ng-app="test" ng-controller="testController">
-	<div class="content">
-		<header class="controls-holder container">
-			<div class="numbers-holder">
-				<input type="number" placeholder="Min number">
-				<input type="number" placeholder="Max number">
-			</div>
-			<div class="buttons-holder">
-				<button>Show all numbers</button>
-				<button>Show even numbers</button>
-				<button>Show odd numbers</button>
-			</div>
-		</header>
-		<div class="results-space container">
-			<div class="buttons-holder">
-				<button>Display on the left</button>
-				<button>Display on the right</button>
-			</div>
-		</div>
 
-		<div class="list">
-			<!-- INSERT THE NUMBERS HERE. YOU ARE ALLOWED THE MODIFY OTHER PARTS OF THE CODE -->
-		</div>
-	</div>
+<head>
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+</head>
+<!-- Position init for the directive container div-->
+<body ng-app="testApp" ng-controller="testController" ng-init="position={float: 'left',padding: '50px'}">
+<!--**********************************************-->
+    <div class="content">
+        <header class="controls-holder container">
+            <div class="numbers-holder" ng-model="displayValues">
+                <input type="number" placeholder="Min number" ng-change="listArray()" ng-model="minValue">
+                <input type="number" placeholder="Max number" ng-change="listArray()" ng-model="maxValue">
+            </div>
+            <div class="buttons-holder">
+            <!--Filter buttons: this buttons call the functions on the controller-->
+                <button ng-click="listArray()">Show all numbers</button>
+                <button ng-click="evenArray()">Show even numbers</button>
+                <button ng-click="oddArray()">Show odd numbers</button>
+            <!--**********************************************-->
+            </div>
+        </header>
+        <div class="results-space container">
+            <div class="buttons-holder">
+            <!--Position buttons: this buttons change the style of the test-directive container div-->
+                <button ng-click="position={float: 'left',padding: '50px'}">Display on the left</button>
+                <button ng-click="position={float: 'right',padding: '50px'}">Display on the right</button>
+            <!--**********************************************-->
+            </div>
+        </div>
+        <!--test-directive container div--> 
+        <div ng-style="position">
+        <!--Directive in charge of displaying the numbers list-->
+            <test-directive></test-directive>
+        <!--***************************************************-->
+        </div>
+        <!--****************************-->
+    </div>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/directive.js"></script>
 </body>
+
 </html>
