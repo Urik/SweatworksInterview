@@ -4,8 +4,17 @@ html, body {
 	padding: 0;
 }
 
+.pullright{
+	float: right;
+}
+
+.pullleft{
+	float: left;
+}
+
 .content {
-	height: 100%;
+	height: auto;
+	min-height: 100%;
 	background-color: red;
 	max-width: 920px;
 	margin-left: auto;
